@@ -127,3 +127,9 @@ Desktop.ini
 # Maven Wrapper
 ######################
 !.mvn/wrapper/maven-wrapper.jar
+
+######################
+# Application Properties - Passwords, DB address, Socail App Id
+######################
+src/main/resources/config/application-dev.yml
+src/main/resources/config/application-prod.yml
