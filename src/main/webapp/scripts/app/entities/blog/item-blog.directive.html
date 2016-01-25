@@ -1,0 +1,20 @@
+<div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="title"><span>Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="publishedDate"><span>PublishedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="item in items track by item.id">
+                    <td> <a ng-href="{{item.link}}" target="_blank"> {{item.title}} </a></td>
+                    <td ng-bind-html="item.description | to_trusted"></td>
+                    <td>{{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm:ss Z"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

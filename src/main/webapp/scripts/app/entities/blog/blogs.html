@@ -1,0 +1,68 @@
+<div>
+    
+    <jh-alert></jh-alert>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 translate="blogaggrApp.blog.home.title">Blogs</h2>    
+            </div>
+            <div class="col-md-4"><br>
+                <button class="btn btn-success btn-lg btn-block" ui-sref="blog.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="blogaggrApp.blog.home.createLabel">Create a new Blog</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="name"><span translate="blogaggrApp.blog.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="url"><span translate="blogaggrApp.blog.url">Url</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="blog in blogs track by blog.id">
+                    <td><a ui-sref="blog.detail({id:blog.id})" ng-click="setBlogId(blog.id)">{{blog.name}}</a></td>
+                    <td>{{blog.url}}</td>
+                    <!-- <td>{{blog.name}}</td> -->
+                    <td class="text-center">
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <button type="button"
+                                ui-sref="blog.detail({id:blog.id})" ng-click="setBlogId(blog.id)"
+                                class="btn btn-info btn-block">
+                                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                                </button>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <button type="submit"
+                                ui-sref="blog.edit({id:blog.id})"
+                                class="btn btn-primary btn-block">
+                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                                </button>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                 <button type="submit"
+                                ui-sref="blog.delete({id:blog.id})"
+                                class="btn btn-danger btn-block">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

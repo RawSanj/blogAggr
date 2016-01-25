@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "blogaggr",
+    "packageName": "com.rawsanj.blogaggr",
+    "packageFolder": "com/rawsanj/blogaggr",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "733a498aeb5c044bbf19b95544437c3cb3226856",
+    "testFrameworks": [
+      "protractor"
+    ]
+  }
+}

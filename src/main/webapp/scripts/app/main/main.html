@@ -1,0 +1,54 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <h1><br>
+                <span translate="main.title">Welcome to BloagAggr</span>
+                <span ng-show="account.firstName!=''">, {{account.firstName}}!</span>
+                <span ng-show="account.firstName===''">, {{account.login}}!</span>
+                <!-- <span ng-show="account===''">!</span> -->
+            </h1>
+            <br> 
+            <div ng-switch="isAuthenticated()">
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
+                    If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
+                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home-items">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ng-controller="ItemController">
+                <div class="home-items-header">
+                    <h2>Latest Blogs Posts : </h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped fixed">
+
+                        <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+
+                            <tr ng-repeat="item in items track by item.id">
+                                <!-- <td><a ui-sref="item.detail({id:item.id})">{{item.id}}</a></td> -->
+                                <td> 
+                                	<a ng-href="{{item.link}}" target="_blank"> {{item.title}} </a> <br><br>
+                                	{{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm"}}
+                                </td>
+                                <td ng-bind-html="item.description | to_trusted"></td>
+<!--                                 <td>{{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm:ss Z"}}</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>              
+        </div>
+    </div>
+</div>
