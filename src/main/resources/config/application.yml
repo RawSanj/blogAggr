@@ -1,4 +1,13 @@
 # ===================================================================
+# Spring Boot configuration - application-dev.yml and application-prod.yml
+#
+# Please visit this commit to add above two yml files in config folder.
+# https://github.com/RawSanj/blogAggr/commit/1c89f16042624d067fbdd741d6ec232df386684c
+#
+# Note: Unstaged above files from git to hide my credentials. :)
+# ===================================================================
+
+# ===================================================================
 # Spring Boot configuration.
 #
 # This configuration will be overriden by the Spring profile you use,
