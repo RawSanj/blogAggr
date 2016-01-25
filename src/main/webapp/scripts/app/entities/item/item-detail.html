@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="blogaggrApp.item.detail.title">Item</span> {{item.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="blogaggrApp.item.title">Title</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{item.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blogaggrApp.item.description">Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{item.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blogaggrApp.item.publishedDate">PublishedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{item.publishedDate}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blogaggrApp.item.link">Link</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{item.link}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,9 @@
+{
+    "activate": {
+        "title": "Activation",
+        "messages": {
+            "success": "<strong>आपका उपभोक्ता सक्रिय हो गया है।</strong> कृपया <a class=\"alert-link\" href=\"#/login\">साइन इन करें</a>.",
+            "error": "<strong>आपका उपभोक्ता सक्रिय नहीं किया जा सकता है।</strong> कृपया साइन अप करने के पंजीकरण फार्म का उपयोग करें."
+        }
+    }
+}
