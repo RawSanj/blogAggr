@@ -5,8 +5,8 @@ angular.module('blogaggrApp')
         // var id = $rootScope.blogIdForItems;
         // console.log(id);
         $scope.items = [];
-        $scope.predicate = 'id';
-        $scope.reverse = true;
+        $scope.predicate = 'publishedDate';
+        $scope.reverse = false;
         $scope.page = 0;
 
         $scope.loadAll = function() {
