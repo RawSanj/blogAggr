@@ -133,3 +133,8 @@ Desktop.ini
 ######################
 src/main/resources/config/application-dev.yml
 src/main/resources/config/application-prod.yml
+
+######################
+# Log Files
+######################
+src/main/webapp/logs/**
