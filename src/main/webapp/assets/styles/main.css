@@ -1,6 +1,6 @@
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: rgba(33, 150, 243, 0.04);;
+    font-family: "Roboto", Verdana, Arial, sans-serif;
     color: #333;
     padding-top: 70px;
 }
@@ -314,3 +314,22 @@ th.pull-right{
     overflow-x: scroll;
 }
 
+/* Change Loading Bar color */
+
+#loading-bar .bar {
+	background: #E51C23;
+	height: 4px;
+}
+
+#loading-bar-spinner .spinner-icon {
+	width: 20px;
+	height: 20px;
+	border: solid 4px transparent;
+	border-top-color: #E51C23;
+	border-left-color: #E07145;
+	border-right-color: #FF9800;
+	border-radius: 30px;
+}
+td:hover {
+	background-color: rgba(33, 150, 243, 0.08);
+}

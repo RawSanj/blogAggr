@@ -24,26 +24,35 @@
     </div>
 </div>
 
-<div class="home-items">
+<div class="">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div ng-controller="ItemController">
-                <div class="home-items-header">
-                    <h2>Latest Blogs Posts : </h2>
-                </div>
                 <div class="table-responsive">
-                    <table class="table table-striped fixed">
+                    <table class="table table-condensed">
+                    	<thead>
+						    <tr style="background-color: rgba(33, 150, 243, 0.26);">
+						      <th class="text-warning"> 
+						      	<span style="font-size: 24px;"> Latest Blog Feeds.... </span>
+						      </th>
+						    </tr>
+						  </thead>
 
                         <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
 
                             <tr ng-repeat="item in items track by item.id">
-                                <!-- <td><a ui-sref="item.detail({id:item.id})">{{item.id}}</a></td> -->
                                 <td> 
-                                	<a ng-href="{{item.link}}" target="_blank"> {{item.title}} </a> <br><br>
-                                	{{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm"}}
+                                	<div>
+                                		<a ng-href="{{item.link}}" target="_blank"> 
+                                			<span style="font-size: 18px;">{{item.title}}</span> 
+                                		</a> 
+                                		<span class="pull-right" style="font-size: 16px; font-weight: 500;"> - {{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm"}}</span>
+                                	</div>
+                                	 <br>
+                                	 <div class="text-center">
+                                	 	<span ng-bind-html="item.description | to_trusted"></span>
+                                	 </div>
                                 </td>
-                                <td ng-bind-html="item.description | to_trusted"></td>
-<!--                                 <td>{{item.publishedDate | date:"EEE, dd MMM yyyy HH:mm:ss Z"}}</td> -->
                             </tr>
                         </tbody>
                     </table>
